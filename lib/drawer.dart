@@ -1,6 +1,8 @@
+// drawer.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'main.dart'; // Assuming main.dart is in the same directory
+import 'main.dart';
+import 'grid_view_page.dart'; // Import the new page
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -25,7 +27,7 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.home),
             title: Text('Home'),
             onTap: () {
-              Get.back(); // Close the drawer
+              Get.back();
               Get.to(() => MyHomePage(title: 'Flutter Demo Home Page'));
             },
           ),
@@ -33,8 +35,16 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.info),
             title: Text('About'),
             onTap: () {
-              Get.back(); // Close the drawer
+              Get.back();
               Get.to(() => const AboutPage());
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.grid_view),
+            title: Text('Grid View'),
+            onTap: () {
+              Get.back();
+              Get.to(() => GridViewPage()); // Navigate to GridViewPage
             },
           ),
         ],
