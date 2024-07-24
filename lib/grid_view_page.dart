@@ -1,4 +1,3 @@
-// grid_view_page.dart
 import 'package:flutter/material.dart';
 
 class GridViewPage extends StatelessWidget {

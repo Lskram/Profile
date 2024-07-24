@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'main.dart';
-import 'grid_view_page.dart'; // Import the new page
+import 'grid_view_page.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -40,11 +40,11 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.grid_view),
-            title: Text('Grid View'),
+            leading: Icon(Icons.grid_on),
+            title: Text('GridListViews'),
             onTap: () {
               Get.back();
-              Get.to(() => GridViewPage()); // Navigate to GridViewPage
+              Get.to(() => GridViewPage());
             },
           ),
         ],
