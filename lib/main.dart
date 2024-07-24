@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'drawer.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'about_page.dart'; // นำเข้า AboutPage class
+import 'bottom_sheet_page.dart'; // นำเข้า BottomSheetPage class
 
 void main() {
   runApp(const MyApp());
@@ -51,93 +52,63 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.only(
-              top: 40,
-              right: 20,
-              bottom: 10,
-            ),
-            color: Colors.red,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.settings, color: Colors.white),
-                  onPressed: () {
-                    Get.to(() => const AboutPage());
-                  },
-                ),
-                const SizedBox(width: 20),
-                const Icon(FontAwesomeIcons.cartPlus, color: Colors.white),
-                const SizedBox(width: 40),
-                const Icon(FontAwesomeIcons.message, color: Colors.white),
-              ],
-            ),
-          ),
-          Container(
-            color: Colors.amber,
-            child: Column(
-              children: [
-                const SizedBox(height: 10),
-                Container(
-                  padding: const EdgeInsets.only(
-                    top: 10,
-                    right: 20,
-                    bottom: 20,
-                  ),
-                  child: const Text(
-                    "Chanachai | Lestsongkram",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ),
-                const Text('This is the About Page'),
-                ElevatedButton(
-                  onPressed: () {
-                    Get.to(() => const AboutPage());
-                  },
-                  child: const Text('Home'),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  child: const Text('Back'),
-                ),
-              ],
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Container(
+                    height: 200,
+                    child: GridView.count(
+                      primary: false,
+                      padding: const EdgeInsets.all(20),
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      crossAxisCount: 2,
+                      children: <Widget>[
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          color: Colors.teal[100],
+                          child: const Text("He'd have you all unravel at the"),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          color: Colors.teal[200],
+                          child: const Text('Heed not the rabble'),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          color: Colors.teal[300],
+                          child: const Text('Sound of screams but the'),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          color: Colors.teal[400],
+                          child: const Text('Who scream'),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          color: Colors.teal[500],
+                          child: const Text('Revolution is coming...'),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          color: Colors.teal[600],
+                          child: const Text('Revolution, they...'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+                return ListTile(
+                  title: Text('Item $index'),
+                );
+              },
             ),
           ),
         ],
       ),
       drawer: AppDrawer(),
-    );
-  }
-}
-
-class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('About Page'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('This is the About Page'),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Get.offAll(MyHomePage(title: 'Flutter Demo Home Page'));
-              },
-              child: const Text('Back'),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

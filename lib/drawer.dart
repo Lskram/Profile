@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'main.dart';
 import 'grid_view_page.dart';
+import 'about_page.dart'; // นำเข้า AboutPage class
+import 'bottom_sheet_page.dart'; // นำเข้า BottomSheetPage class
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -44,6 +46,14 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Get.back();
               Get.to(() => GridViewPage());
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.view_list),
+            title: Text('BottomSheet'),
+            onTap: () {
+              Get.back();
+              Get.to(() => BottomSheetPage());
             },
           ),
         ],
