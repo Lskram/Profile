@@ -15,7 +15,7 @@
 ## 📸 ภาพหน้าจอ
 
 ### หน้าโฮม
-![Home Page](screenshot_home.png)
+![Home Page](รูปเเนะนำ/Home.PNG)
 
 ### เมนู Drawer
 ![Drawer Menu](screenshot_drawer.png)
