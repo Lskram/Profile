@@ -18,10 +18,10 @@
 ![Home Page](รูปเเนะนำ/Home.PNG)
 
 ### เมนู Drawer
-![Drawer Menu](screenshot_drawer.png)
+![Drawer Menu](รูปเเนะนำ/drawer.PNG)
 
 ### Bottom Sheet Modal
-![Bottom Sheet Modal](screenshot_bottom_sheet.png)
+![Bottom Sheet Modal](รูปเเนะนำ/modalbottomsheet.PNG)
 
 ## 🚀 เริ่มต้นใช้งาน
 
