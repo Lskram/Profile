@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'drawer.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title});
-
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -70,55 +69,53 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 const SizedBox(width: 20),
                 const Icon(FontAwesomeIcons.cartPlus, color: Colors.white),
-                const SizedBox(width: 20), // Adjusted width for spacing
+                const SizedBox(width: 40),
                 const Icon(FontAwesomeIcons.message, color: Colors.white),
               ],
             ),
           ),
           Container(
             color: Colors.amber,
-            child: Row(
+            child: Column(
               children: [
-                const SizedBox(width: 10),
+                const SizedBox(height: 10),
                 Container(
                   padding: const EdgeInsets.only(
                     top: 10,
                     right: 20,
                     bottom: 20,
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Chanachai | Lestsongkram",
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ],
+                  child: const Text(
+                    "Chanachai | Lestsongkram",
+                    style: TextStyle(fontSize: 16),
                   ),
                 ),
-                const Spacer(), // To push the icons to the rightmost side
-                const Icon(Icons.home,
-                    color: Colors
-                        .white), // Replace with your desired icon for home
+                const Text('This is the About Page'),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => const AboutPage());
+                  },
+                  child: const Text('Home'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text('Back'),
+                ),
               ],
             ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Get.to(() => const AboutPage());
-            },
-            child: const Text('Home'),
-          ),
         ],
       ),
-      drawer: AppDrawer(), // Add the drawer here
+      drawer: AppDrawer(),
     );
   }
 }
 
 class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key});
+  const AboutPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -131,6 +128,13 @@ class AboutPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('This is the About Page'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Get.offAll(MyHomePage(title: 'Flutter Demo Home Page'));
+              },
+              child: const Text('Back'),
+            ),
           ],
         ),
       ),
